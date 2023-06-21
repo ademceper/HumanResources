@@ -1,0 +1,47 @@
+﻿@using HumanResources.Data;
+@model IEnumerable<Advert>
+
+<section class="section" id="kids">
+    <div class="container align-items-center">
+        <div class="row border-2">
+            <div class="col-lg-6">
+                <div class="section-heading ">
+                    <h2 class="text-primary">"Discover Paradise and Build Your Career in the Maldives!"</h2>
+                    <span class="text-primary">"Experience Paradise, Work in the Maldives!".</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section bg-left-half">
+        <div class="container owl-5-style">
+
+            <h2 class="text-secondary  "></h2>
+
+
+            <div class="owl-carousel owl-2">
+                @foreach (var advert in ViewBag.Adverts as IEnumerable<Advert>)
+                {
+                    <div class="">
+                        <a asp-action="Advert" asp-route-id="@advert.Id">
+                            <img src="@advert.Logo" alt="Image" class="img-fluid">
+                        </a>
+                        <h5 style="text-align:center">@advert.Category!.Name</h5>
+                        <h3 style="text-align:center"><a href="#">@advert.Appellation</a></h3>
+                        <h1 style="text-align:center">@advert.Salary.ToString("c2")</h1>
+                        <h5 style="text-align:center">  <a asp-action="Recourse" asp-route-id="@advert.Id"><button type="submit" class="btn btn-primary">Başvur</button></a> </h5>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+

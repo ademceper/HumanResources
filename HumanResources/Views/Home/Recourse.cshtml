@@ -1,0 +1,68 @@
+﻿@using HumanResources.Data;
+
+@model RecourseViewModel
+<div class="page-heading about-page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>You are one step closer to your dreams Us</h2>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+<!-- ***** Contact Area Starts ***** -->
+<div class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31833.408801401565!2d73.48590382021224!3d4.185754680429038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b3f7e5607d1f5e5%3A0x8ad8e99b5a051299!2sMale%2C%20Maldivler!5e0!3m2!1str!2str!4v1686500078157!5m2!1str!2str" width="500" height="450" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  <!-- You can simply copy and paste "Embed a map" code from Google Maps for any location. -->
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Say Hello. Don't Be Shy!</h2>
+                    <span></span>
+                </div>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <label class="form-label" asp-for="Name"></label>
+                                <input class="form-control" asp-for="Name" placeholder="Adınızı yazınız....">
+
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <fieldset>
+                                <label class="form-label" asp-for="Email"></label>
+                                <input class="form-control" asp-for="Email" placeholder="Mail Adresinizi  yazınız....">
+
+                            </fieldset>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <label class="form-label" asp-for="Number"></label>
+                                    <input class="form-control" asp-for="Number" placeholder="Telefon  Numaranızı yazınız....">
+
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-dark-button" ><i class="fa fa-paper-plane"></i></button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Contact Area Ends ***** -

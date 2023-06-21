@@ -1,0 +1,84 @@
+﻿@model Advert
+@{
+    ViewData["title"] = "Kayıt Güncelleme";
+}
+<div class="card">
+    <div class="card-body">
+        <h2>
+            @ViewData["title"]
+        </h2>
+
+
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Logo" />
+            <input type="hidden" asp-for="Flag" />
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Appellation"></label>
+                <input class="form-control" asp-for="Appellation" placeholder="Şirket Ünvanı Yazınız...">
+                <span asp-validation-for="Appellation"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Salary" class="form-label"></label>
+                <input asp-for="SalaryText" class="form-control" />
+                <span asp-validation-for="SalaryText" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <div class="py-3">
+                    <img src="@Model.Logo" height="240" />
+                </div>
+                <div class="text-info">(Değiştirmek istiyorsanız seçiniz)</div>
+                <label for="formFile" class="form-label" asp-for="Logo"></label>
+                <input class="form-control" type="file" id="LogoFile" name="LogoFile">
+            </div>
+            <div class="mb-3">
+                <div class="py-3">
+                    <img src="@Model.Flag" height="240" />
+                </div>
+                <div class="text-info">(Değiştirmek istiyorsanız seçiniz)</div>
+                <label for="formFile" class="form-label" asp-for="Flag"></label>
+                <input class="form-control" type="file" id="FlagFile" name="FlagFile">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Qualifications"></label>
+                <textarea asp-for="Qualifications" class="form-control"></textarea>
+                <span asp-validation-for="Qualifications"></span>
+            </div>
+ <div class="mb-3">
+                <label class="form-label" asp-for="CategoryId"></label>
+                <select class="form-select" asp-for="CategoryId" asp-items="@ViewBag.Categories">
+                </select>
+                <span asp-validation-for="CategoryId"></span>
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">
+                Kaydet
+            </button>
+            <a class="btn btn-primary" asp-action="Index">İptal</a>
+        </form>
+    </div>
+</div>
+
+<div>
+</div>
+
+@section Scripts {
+
+
+    <partial name="_ValidationScriptsPartial" />
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        $(() => {
+            $('.summernote').summernote({
+                height: 200
+            });
+        })
+    </script>
+}

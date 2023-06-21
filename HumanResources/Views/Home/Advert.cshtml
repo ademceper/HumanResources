@@ -1,0 +1,52 @@
+﻿@using HumanResources;
+@using HumanResources.Data;
+
+
+@model Advert
+@{
+    ViewData["title"] = Model.Appellation;
+}
+
+
+
+
+<div class="page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>@Model.Category.Name</h2>
+                        <span>"Unleash Your Potential in Paradise: Job Openings in the Maldives"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section class="section" id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8" >
+                <div class="left-images">
+                    <img src="@Model.Logo" alt="">
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h4>@Model.Appellation</h4>
+                    <span>@Model.Category.Name</span>
+
+                    <span>@Model.Qualifications</span>
+                    <div class="quote">
+                        <i class="fa fa-quote-left"></i><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod.</p>
+                    </div>
+
+
+                    <h4>   @Model.Salary.ToString("c2")</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

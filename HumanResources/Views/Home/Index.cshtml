@@ -1,0 +1,75 @@
+﻿@using HumanResources.Data;
+@model List<Advert>
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h4 class="text-primary">
+                                "ESCAPE TO PARADISE: JOIN OUR TEAM IN THE MALDIVES!"
+                            </h4>
+                            <span >Finding your new job just got easier</span>
+                            <div class="main-border-button">
+                                <a asp-action="Recourse">Purchase Now!</a>
+                            </div>
+                        </div>
+                        <img src="~/admin/images/rayyu-maldives-xpsfxsbxjrg-unsplash.jpg" width="100%" height="800" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="_ProductListPartial" model="@ViewBag.Adverts as IEnumerable<Advert>" />
+<div class="inner-content align-center">
+    <h2>"Endless Opportunities Await: Discover Your Career in the Maldives."</h2>
+    </div>
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h4>"Endless Opportunities Await: Discover Your Career in the Maldives."</h4>
+                            <span></span>
+                            <div class="main-border-button">
+                                <a asp-action="Recourse">Purchase Now!</a>
+                            </div>
+                        </div>
+                        <img src="~/assets/images/mohamed-thasneem-3bablstd-iy-unsplash.jpg" width="100%" height="450" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="align-content-center">
+    <div class="container">
+        @foreach (var advert in ViewBag.Adverts as IEnumerable<Advert>){
+        <div class="card mb-3" style="max-width: 840px; ">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <a asp-action="Advert" asp-route-id="@advert.Id">
+                    <img src="@advert.Logo" class="img-fluid rounded-start" alt="..."></a>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@advert.Category.Name</h5>
+                        <p class="card-text">@advert.Qualifications</p>
+                            <h5 class="card-title text-primary">@advert.Salary.ToString("c2")</h5>
+                            <h5 style="text-align:center">  <a asp-action="Recourse" asp-route-id="@advert.Id"><button type="submit" class="btn btn-primary">Başvur</button></a> </h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
